@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<group>
+	<ofxMediaPipeOscReceiver>
+		<Status>Not Connected</Status>
+		<ShiftX>0</ShiftX>
+		<ShiftY>0</ShiftY>
+		<ScaleX>1</ScaleX>
+		<ScaleY>1</ScaleY>
+	</ofxMediaPipeOscReceiver>
+</group>
