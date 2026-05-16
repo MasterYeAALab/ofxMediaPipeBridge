@@ -6,17 +6,19 @@ class ofApp : public ofBaseApp {
 public:
 	void setup();
 	void update();
+	void extracted();
+	
 	void draw();
 
 	ofxOscReceiver receiver;
 	
-	// 存储特征点
-	vector<ofDefaultVec3> facePoints;
-	vector<ofDefaultVec3> handPoints;
-	vector<ofDefaultVec3> posePoints;
+	// 存储特征点 (支持多对象)
+	map<int, vector<ofDefaultVec3>> allFacePoints;
+	map<int, vector<ofDefaultVec3>> allHandPoints;
+	map<int, vector<ofDefaultVec3>> allPosePoints;
 	
-	// 计时器
-	float lastFaceTime, lastHandTime, lastPoseTime;
+	// 计时器 (支持多对象)
+	map<int, float> faceTimers, handTimers, poseTimers;
 	
 	// 解析与绘制辅助函数
 	void parseLandmarks(const ofxOscMessage& m, vector<ofDefaultVec3>& targetList);
